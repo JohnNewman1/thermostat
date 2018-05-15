@@ -1,10 +1,15 @@
 function Thermostat() {
   this.temperature = 20
+  this.maxTemp = 32
 
 }
 
 Thermostat.prototype.up = function(increment) {
   this.temperature += increment;
+  if (this.temperature >= this.maxTemp) {
+    this.temperature = this.maxTemp;
+    throw "max temperature reached"
+  }
 }
 
 Thermostat.prototype.down = function(decrement) {

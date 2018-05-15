@@ -24,4 +24,15 @@ describe('thermostat', function() {
     expect(thermostat.temperature).toEqual(10);
   });
 
+  it('has a max temp', function(){
+    expect(thermostat.maxTemp).toEqual(32);
+  });
+
+  it('throws an error when trying to go above max temp', function(){
+    expect(function() {thermostat.up(13) }).toThrow("max temperature reached");
+    expect(thermostat.temperature).toEqual(32);
+  });
+
+
+
 });
