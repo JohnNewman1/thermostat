@@ -58,5 +58,19 @@ describe('thermostat', function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
+  it('reports a medium energy usage', function() {
+    expect(thermostat.energyUsage()).toEqual("medium-usage");
+  });
+
+  it('reports a high energy usage', function() {
+    thermostat.up(5);
+    expect(thermostat.energyUsage()).toEqual("high-usage");
+  });
+
+  it('reports a low energy usage', function() {
+    thermostat.down(3);
+    expect(thermostat.energyUsage()).toEqual("low-usage");
+  });
+
 
 });
