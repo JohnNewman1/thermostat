@@ -8,5 +8,8 @@ Thermostat.prototype.up = function(increment) {
 }
 
 Thermostat.prototype.down = function(decrement) {
-  this.temperature -= decrement;
+  for (var i = 0; i < decrement; i++) {
+    if (this.temperature == 10 ) { throw "Min temperature of 10 reached"};
+    this.temperature--;
+  }
 }

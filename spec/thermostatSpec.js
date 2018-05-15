@@ -19,4 +19,9 @@ describe('thermostat', function() {
     expect(thermostat.temperature).toEqual(15);
   });
 
+  it('throws an error when trying to go below 10', function(){
+    expect(function() {thermostat.down(11) }).toThrow("Min temperature of 10 reached");
+    expect(thermostat.temperature).toEqual(10);
+  });
+
 });
