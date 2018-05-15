@@ -33,6 +33,11 @@ describe('thermostat', function() {
     expect(thermostat.temperature).toEqual(32);
   });
 
+  it('changes max temp when run', function(){
+    expect(function() {thermostat.up(13) }).toThrow("max temperature reached");
+    expect(thermostat.temperature).toEqual(32);
+  });
+
 
 
 });
