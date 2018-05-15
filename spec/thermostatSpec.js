@@ -52,4 +52,11 @@ describe('thermostat', function() {
     expect(thermostat.maxTemp()).toEqual(32);
   });
 
+  it('sets the temperature back to 20 when reset method called', function() {
+    thermostat.up(4);
+    thermostat.reset();
+    expect(thermostat.temperature).toEqual(20);
+  });
+
+
 });
